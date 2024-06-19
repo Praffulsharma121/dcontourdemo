@@ -5,12 +5,14 @@ import "./Login.css";
 import DcontourLogo from "../assets/Images/Group 3.png";
 import { GoogleLogin } from "../OtherLoginOptions/GoogleLogin";
 import { FacebookLogin } from "../OtherLoginOptions/FacebookLogin";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
   //   return <Box className={LoginCss["Login--Box"]}></Box>;
 
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
+  const navigate = useNavigate();
 
   return (
     <Box className="Login--Box">
@@ -41,7 +43,7 @@ export const Login = () => {
               type="password"
             />
 
-            <Button className="Login--Button">Login</Button>
+            <Button className="Login--Button" onClick={() => navigate("/")}>Login</Button>
           </Box>
         </Box>
       </Box>
