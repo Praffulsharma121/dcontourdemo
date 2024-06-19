@@ -1,0 +1,91 @@
+.Login--Box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* background-image: url("../assets/Images/loginBackground.jpeg"); */
+  background-image: url("../assets/Images/carHeadlight.webp");
+  background-size: cover;
+  /* opacity: 0.8; */
+  justify-content: center;
+  align-items: center;
+}
+
+.Login--Form--Box {
+  position: relative;
+  padding: 50px;
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.Login--Options {
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+}
+
+.Other--Login--Options--Box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 200px;
+  justify-content: center;
+  align-items: center;
+}
+
+.Login--Continue--Text {
+  color: white;
+  font-size: 25px;
+}
+
+.Login--SSO--Box {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.Login--Text {
+  font-size: 30px;
+  color: #fff;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.Form--Login {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.Login--Input {
+  width: 300px !important;
+  background-color: #fff !important;
+  border-bottom: 1px solid #3a3a3a !important;
+  border-radius: 0px !important;
+}
+
+.Login--Input::placeholder {
+  color: #3a3a3a !important;
+}
+
+.Login--Button{
+    width: 300px;
+    height: 41px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff !important;
+    font-size: 15px !important;
+    font-style: bold !important;
+    background-color: #258EEE !important;
+    border-radius: 10px;
+    box-shadow: #3a3a3a;
+    cursor: pointer;
+}

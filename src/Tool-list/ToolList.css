@@ -1,0 +1,139 @@
+.Tools--Box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.Tool--Heading {
+  font-size: 30px;
+  font-style: bold;
+  color: #258eee;
+}
+
+.Tool--Box {
+  border: 7px solid transparent; 
+  border-image: linear-gradient(
+      120deg,
+      #8fffce,
+      #b8e7ff 26.85%,
+      #c2d1ff 59.66%,
+      #d2ccff
+    )
+    1;
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Tool--Box:hover {
+  box-shadow: 0 0 20px rgba(0, 115, 229, 0.3), 0 0 20px rgba(41, 94, 255, 0.3),
+    0 0 20px rgba(104, 66, 255, 0.3);
+  animation: waveBorder 5s infinite linear;
+}
+
+@keyframes waveBorder {
+  0% {
+    border-image-source: linear-gradient(
+      120deg,
+      #8fffce,
+      #b8e7ff 26.85%,
+      #c2d1ff 59.66%,
+      #d2ccff
+    );
+  }
+  50% {
+    border-image-source: linear-gradient(
+      120deg,
+      #d2ccff,
+      #c2d1ff 26.85%,
+      #b8e7ff 59.66%,
+      #8fffce
+    );
+  }
+  100% {
+    border-image-source: linear-gradient(
+      120deg,
+      #8fffce,
+      #b8e7ff 26.85%,
+      #c2d1ff 59.66%,
+      #d2ccff
+    );
+  }
+}
+
+/* .Tool--Box {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: transparent;
+    font-size: 24px; 
+    overflow: hidden;
+    border: 7px solid transparent;
+    border-image: linear-gradient(
+        120deg,
+        #8fffce,
+        #b8e7ff 26.85%,
+        #c2d1ff 59.66%,
+        #d2ccff
+      ) 1; 
+    background: linear-gradient(
+        120deg,
+        #8fffce,
+        #b8e7ff 26.85%,
+        #c2d1ff 59.66%,
+        #d2ccff
+      ); 
+    -webkit-background-clip: text; 
+    background-clip: text;
+    cursor: pointer;
+    transition: all 0.3s ease; 
+  }
+  
+  .Tool--Box:hover {
+    border-image: linear-gradient(
+        120deg,
+        #d2ccff,
+        #c2d1ff 26.85%,
+        #b8e7ff 59.66%,
+        #8fffce
+      ) 1;
+     
+    box-shadow: 0 0 20px rgba(0, 115, 229, 0.3), 
+                0 0 20px rgba(41, 94, 255, 0.3),
+                0 0 20px rgba(104, 66, 255, 0.3); 
+  }
+  
+  .Tool--Box:hover::before {
+    animation: waveText 5s infinite linear; 
+  }
+  
+  @keyframes waveText {
+    0%, 100% {
+      background: linear-gradient(
+        120deg,
+        #8fffce,
+        #b8e7ff 26.85%,
+        #c2d1ff 59.66%,
+        #d2ccff
+      );
+    }
+    50% {
+      background: linear-gradient(
+        120deg,
+        #d2ccff,
+        #c2d1ff 26.85%,
+        #b8e7ff 59.66%,
+        #8fffce
+      );
+    }
+  } */
+  

@@ -1,0 +1,16 @@
+.UploadFile{
+    background-color: green;
+    color: white;
+    padding: 30px;
+    border: transparent !important;
+}
+
+.UploadButton{
+    width: 200px !important;
+    height: 40px !important;
+    background-color: #258EEE !important;
+    color: #fff !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
