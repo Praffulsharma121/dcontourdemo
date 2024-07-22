@@ -7,6 +7,8 @@ import { Login } from "./Login/Login";
 import ProtectedRoute from "./ProtectedRoute";
 import { Ffstrip } from "./FFSTRIP/Ffstrip";
 import { LightGuide } from "./Light-Guide/LightGuide";
+import { PillowOptics } from "./pillow-optics/PillowOptics";
+import { Collimator } from "./collimator/Collimator";
 
 const AppRouter: React.FC = () => {
   return (
@@ -17,7 +19,9 @@ const AppRouter: React.FC = () => {
           <Route element={<ProtectedRoute />}>
             <Route path="/" element={<Home />} />
             <Route path="/Tool-Name/FFSTRIP" element={<Ffstrip />} />
-            <Route path="/Tool-Name/Light-Guide" element={<LightGuide />} />
+            <Route path="/Tool-Name/Light Guide" element={<LightGuide />} />
+            <Route path="/Tool-Name/Pillow Optics" element={<PillowOptics/>} />
+            <Route path="/Tool-Name/Collimator" element={<Collimator />} />
           </Route>
           <Route path="*" element={<PageNotFound />} />
         </Routes>

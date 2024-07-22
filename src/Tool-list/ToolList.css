@@ -5,28 +5,74 @@
   gap: 20px;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(135deg, #340034, #150050);
 }
 
 .Tool--Heading {
   font-size: 30px;
   font-style: bold;
-  color: #258eee;
+  color: #fff;
 }
 
+.ToolList {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  gap: 40%;
+  width: 100%;
+  word-wrap: break-word;
+  padding: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ToolCard {
+  background: #7A0BC0; /* White background for contrast */
+  border: 2px solid transparent;
+  border-radius: 20px;
+  display: flex;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-top: 20px;
+  max-width: 300px;
+  height: 150px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+.ToolCard:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+.ToolCard-heading {
+  font-family: "Arial", sans-serif;
+  font-size: 1.5rem;
+  color: #fff; /* Darker shade to stand out on white */
+  margin: 0;
+}
+
+/* 
+
+
 .Tool--Box {
-  border: 7px solid transparent; 
+  border: 7px solid transparent;
   border-image: linear-gradient(
       120deg,
-      #8fffce,
-      #b8e7ff 26.85%,
-      #c2d1ff 59.66%,
-      #d2ccff
+      #258eee,
+      #499dff 26.85%,
+      #75b1ff 59.66%,
+      #a1c4ff
     )
     1;
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 100px;
   cursor: pointer;
   display: flex;
+  flex-direction: row;
+  gap: 20pxß;
   justify-content: center;
   align-items: center;
 }
@@ -41,28 +87,28 @@
   0% {
     border-image-source: linear-gradient(
       120deg,
-      #8fffce,
-      #b8e7ff 26.85%,
-      #c2d1ff 59.66%,
-      #d2ccff
+      #258eee,
+      #499dff 26.85%,
+      #75b1ff 59.66%,
+      #a1c4ff
     );
   }
   50% {
     border-image-source: linear-gradient(
       120deg,
-      #d2ccff,
-      #c2d1ff 26.85%,
-      #b8e7ff 59.66%,
-      #8fffce
+      #258eee,
+      #499dff 26.85%,
+      #75b1ff 59.66%,
+      #a1c4ff
     );
   }
   100% {
     border-image-source: linear-gradient(
       120deg,
-      #8fffce,
-      #b8e7ff 26.85%,
-      #c2d1ff 59.66%,
-      #d2ccff
+      #258eee,
+      #499dff 26.85%,
+      #75b1ff 59.66%,
+      #a1c4ff
     );
   }
 }
@@ -136,4 +182,3 @@
       );
     }
   } */
-  

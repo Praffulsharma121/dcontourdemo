@@ -1,0 +1,22 @@
+.Header--Box {
+  width: 100%;
+  padding: 20px;
+  height: 50px;
+  background: #160838;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu--Icon, .user--Icon {
+  color: #fff;
+  height: 25px;
+  width: 25px;
+  cursor: pointer !important;
+}
+
+.headerBrand_Img{
+  width: 70px;
+}

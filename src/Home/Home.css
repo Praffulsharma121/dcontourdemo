@@ -1,63 +1,41 @@
-.Home--Box {
+/* 
+
+#background, .Home--Box {
   width: 100%;
-  display: flex;
   height: 100%;
-  overflow: auto;
-  padding: 0;
-  flex-direction: column;
-  gap: 40px;
+  background: linear-gradient(135deg, #340034, #150050);
 }
 
-.About--Box {
-  width: 100%;
-  /* height: 100%; */
-  height: fit-content;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  position: relative; /* Ensure proper height calculation */
-}
-
-.background-image {
-  /* position: absolute; */
+canvas {
+  position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  /* height: 100%; */
-  background-image: url("../assets/Images/homepageImage.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  z-index: -1; /* Ensure background stays behind content */
 }
 
-.About--Details--Box {
+.center-text {
   position: absolute;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-  top: 10%;
-}
-
-.About--Logo {
-  width: 273px;
-  height: 195px;
-}
-
-.About--Text {
-  color: white;
-  font-size: 20px;
-  width: 30%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
+  color: #ffffff;
 }
 
-.Footer--Box {
-  background-color: #258eee !important;
-  padding: 20px;
-  /* position: fixed; */
-  bottom: 0;
-  width: 100%;
+.center-text h1 {
+  font-size: 3rem;
+  margin: 0;
+  color: #00e7ff;
+  text-shadow: 0 0 10px rgba(0, 231, 255, 0.8);
+  font-family: 'Nebule', sans-serif;
+}
+
+.center-text p {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #00e7ff;
+  text-shadow: 0 0 10px rgba(0, 231, 255, 0.8);
+} */
+
+.AboutUsImg{
+  height: 300px;
 }

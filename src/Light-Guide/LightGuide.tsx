@@ -1,7 +1,56 @@
 import React, { useRef, useState } from "react";
-import { Box, Button, Input, Text, Stack } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Input,
+  Text,
+  Stack,
+  Flex,
+  useRadio,
+  useRadioGroup,
+  HStack,
+} from "@chakra-ui/react";
 import { AiOutlineUpload } from "react-icons/ai";
 import "./LightGuide.css";
+
+function RadioCard(props: any) {
+  const { getInputProps, getCheckboxProps } = useRadio(props);
+
+  const input = getInputProps();
+  const checkbox = getCheckboxProps();
+
+  return (
+    <Box as="label">
+      <input {...input} />
+      <Box
+        {...checkbox}
+        cursor="pointer"
+        borderRadius="full"
+        bg={
+          !props.isChecked
+            ? "linear-gradient(to-r, #7A0BC0, #FA58B6)"
+            : "whiteAlpha.300"
+        }
+        color={!props.isChecked ? "white" : "gray.200"}
+        px={5}
+        py={3}
+        m={2}
+        textAlign="center"
+        fontWeight="bold"
+        _hover={{
+          bg: "linear-gradient(to-r, #FA58B6, #7A0BC0)",
+          color: "white",
+        }}
+        _checked={{
+          bg: "linear-gradient(to-r, #7A0BC0, #FA58B6)",
+          color: "white",
+        }}
+      >
+        {props.children}
+      </Box>
+    </Box>
+  );
+}
 
 export const LightGuide = () => {
   const configFileInputRef = useRef<HTMLInputElement | null>(null);
@@ -25,6 +74,17 @@ export const LightGuide = () => {
       setInputFile(event.target.files[0]);
     }
   };
+
+  const options = ["Teeth", "Body", "Flutes"];
+  const [selectedCapsule, setSelectedCapsule] = useState("Teeth");
+
+  const { getRootProps, getRadioProps } = useRadioGroup({
+    name: "capsule",
+    defaultValue: "Teeth",
+    onChange: setSelectedCapsule,
+  });
+
+  const group = getRootProps();
 
   // const handleUpload = () => {
   //   if (!configFile || !inputFile) return;
@@ -103,51 +163,177 @@ export const LightGuide = () => {
     inputFileInputRef.current?.click();
   };
 
+  // return (
+  //   <Box className="LightGuide--Box">
+  //     {" "}
+  //     <Box p="4" borderWidth="1px" borderRadius="lg" maxW="600px" m="auto" background="#fff">
+  //       <Stack spacing="4">
+  //         <Button
+  //           variant="outline"
+  //           colorScheme={configFile ? "green" : "blue"}
+  //           leftIcon={<AiOutlineUpload />}
+  //           onClick={handleConfigClick}
+  //         >
+  //           {configFile ? "Change Config File" : "Select Config File"}
+  //         </Button>
+  //         <Input
+  //           type="file"
+  //           ref={configFileInputRef}
+  //           display="none"
+  //           onChange={handleConfigFileChange}
+  //         />
+  //         <Button
+  //           variant="outline"
+  //           colorScheme={inputFile ? "green" : "blue"}
+  //           leftIcon={<AiOutlineUpload />}
+  //           onClick={handleInputClick}
+  //         >
+  //           {inputFile ? "Change Input File" : "Select Input File"}
+  //         </Button>
+  //         <Input
+  //           type="file"
+  //           ref={inputFileInputRef}
+  //           display="none"
+  //           onChange={handleInputFileChange}
+  //         />
+  //         <Button
+  //           colorScheme="teal"
+  //           onClick={handleUpload}
+  //           isDisabled={!configFile || !inputFile}
+  //         >
+  //           Upload
+  //         </Button>
+  //         {!configFile || !inputFile ? (
+  //           <Text color="red.500">Please select both files to upload.</Text>
+  //         ) : null}
+  //       </Stack>
+  //     </Box>
+  //   </Box>
+  // );
+
   return (
-    <Box className="LightGuide--Box">
-      {" "}
-      <Box p="4" borderWidth="1px" borderRadius="lg" maxW="600px" m="auto" background="#fff">
-        <Stack spacing="4">
+    <Box
+      bgGradient="linear(to-r, #1A1A40, #270082)"
+      p={8}
+      minHeight="100vh"
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      flexDirection="column"
+      gap="16px"
+    >
+      <HStack {...group} mb={6}>
+        {options.map((value) => {
+          const radio = getRadioProps({ value });
+          return (
+            <RadioCard
+              key={value}
+              {...radio}
+              isChecked={selectedCapsule === value}
+            >
+              {value}
+            </RadioCard>
+          );
+        })}
+      </HStack>
+      {selectedCapsule == "Teeth" || selectedCapsule == "Body" ? (
+        <Flex
+          direction="column"
+          align="center"
+          justify="center"
+          bg="whiteAlpha.300"
+          p={12}
+          borderRadius="lg"
+          boxShadow="lg"
+          width={["90%", "80%", "60%", "40%"]}
+        >
           <Button
-            variant="outline"
-            colorScheme={configFile ? "green" : "blue"}
-            leftIcon={<AiOutlineUpload />}
-            onClick={handleConfigClick}
+            mb={6}
+            size="lg"
+            bgGradient="linear(to-r, #7A0BC0, #FA58B6)"
+            color="white"
+            _hover={{ bgGradient: "linear(to-r, #FA58B6, #7A0BC0)" }}
           >
-            {configFile ? "Change Config File" : "Select Config File"}
+            Select Config File
           </Button>
-          <Input
-            type="file"
-            ref={configFileInputRef}
-            display="none"
-            onChange={handleConfigFileChange}
-          />
+          <input type="file" id="configFileInput" style={{ display: "none" }} />
           <Button
-            variant="outline"
-            colorScheme={inputFile ? "green" : "blue"}
-            leftIcon={<AiOutlineUpload />}
-            onClick={handleInputClick}
+            mb={6}
+            size="lg"
+            bgGradient="linear(to-r, #7A0BC0, #FA58B6)"
+            color="white"
+            _hover={{ bgGradient: "linear(to-r, #FA58B6, #7A0BC0)" }}
           >
-            {inputFile ? "Change Input File" : "Select Input File"}
+            Select Input File
           </Button>
-          <Input
-            type="file"
-            ref={inputFileInputRef}
-            display="none"
-            onChange={handleInputFileChange}
-          />
+          <input type="file" id="inputFileInput" style={{ display: "none" }} />
           <Button
-            colorScheme="teal"
             onClick={handleUpload}
-            isDisabled={!configFile || !inputFile}
+            size="lg"
+            bgGradient="linear(to-r, #7A0BC0, #FA58B6)"
+            color="white"
+            _hover={{ bgGradient: "linear(to-r, #FA58B6, #7A0BC0)" }}
           >
             Upload
           </Button>
-          {!configFile || !inputFile ? (
-            <Text color="red.500">Please select both files to upload.</Text>
-          ) : null}
-        </Stack>
-      </Box>
+          <Text color="red.400" mt={4}>
+            Please select both files to upload.
+          </Text>
+        </Flex>
+      ) : (
+        <Flex
+          direction="column"
+          align="center"
+          justify="center"
+          bg="whiteAlpha.300"
+          p={12}
+          borderRadius="lg"
+          boxShadow="lg"
+          width={["90%", "80%", "60%", "40%"]}
+        >
+          <Button
+            mb={6}
+            size="lg"
+            bgGradient="linear(to-r, #7A0BC0, #FA58B6)"
+            color="white"
+            _hover={{ bgGradient: "linear(to-r, #FA58B6, #7A0BC0)" }}
+          >
+            Select Input File (Rails)
+          </Button>
+          <input type="file" id="configFileInput" style={{ display: "none" }} />
+          <Button
+            mb={6}
+            size="lg"
+            bgGradient="linear(to-r, #7A0BC0, #FA58B6)"
+            color="white"
+            _hover={{ bgGradient: "linear(to-r, #FA58B6, #7A0BC0)" }}
+          >
+            Select Input File (Body)
+          </Button>
+          <Button
+            mb={6}
+            size="lg"
+            bgGradient="linear(to-r, #7A0BC0, #FA58B6)"
+            color="white"
+            _hover={{ bgGradient: "linear(to-r, #FA58B6, #7A0BC0)" }}
+          >
+            Select Config.ini File
+          </Button>
+          <input type="file" id="inputFileInput" style={{ display: "none" }} />
+          <Button
+            onClick={handleUpload}
+            size="lg"
+            bgGradient="linear(to-r, #7A0BC0, #FA58B6)"
+            color="white"
+            _hover={{ bgGradient: "linear(to-r, #FA58B6, #7A0BC0)" }}
+          >
+            Upload
+          </Button>
+          <Text color="red.400" mt={4}>
+            Please select all files to upload.
+          </Text>
+        </Flex>
+      )}
     </Box>
   );
 };

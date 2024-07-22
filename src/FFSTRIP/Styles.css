@@ -5,11 +5,15 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  background-color: #005B87;
+  /* background-color: #005B87; */
+  /* background: linear-gradient(90deg, #140639, #7961BA, #6E4FC0, #15073A); */
+  /* background: radial-gradient(circle, #7064A4, #270082); */
+  background: #270082;
+
 }
 
 .ToolHead--Box {
-  background-image: url("../assets/Images/loginBackground.png");
+  /* background-image: url("../assets/Images/loginBackground.png"); */
   background-repeat: no-repeat;
   display: flex;
   justify-content: center;
@@ -36,12 +40,16 @@
     color: #fff;
     font-size: 18px;
     padding: 20px;
+    color: #fff;
 }
 
 .Tools-Inputs input{
-    background-color: #fff;
+    color: #fff;
     border-color: transparent;
     border-radius: 0px;
+    border: 2px solid #7a0bc0;
+    background: transparent;
+    border-radius: 10px;
 }
 
 .SourceCoord{
@@ -56,7 +64,10 @@
 
 .SourceCoord > input{
     width: 200px;
-    color: black
+    color: #fff;
+    border: 2px solid #7a0bc0;
+    background: transparent;
+    border-radius: 10px;
 }
 
 .FocalLength--Box{
@@ -77,7 +88,10 @@
 
 .HVSize input{
     width: 200px;
-    color: black
+    color: #fff;
+    border: 2px solid #7a0bc0;
+    border-radius: 10px;
+    background: transparent;
 }
 
 .UploadFile{

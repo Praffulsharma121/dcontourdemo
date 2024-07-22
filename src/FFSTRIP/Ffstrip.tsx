@@ -1,4 +1,12 @@
-import { Box, Input, Text, Button } from "@chakra-ui/react";
+import {
+  Box,
+  Input,
+  Text,
+  Button,
+  Flex,
+  Heading,
+  Stack,
+} from "@chakra-ui/react";
 import React, { useState, useRef } from "react";
 import "./Styles.css";
 
@@ -121,216 +129,426 @@ export const Ffstrip = () => {
   };
 
   const onClickingSumit = () => {
-    console.log(ffstripForm)
-  }
+    console.log(ffstripForm);
+  };
 
+  // return (
+  //   <Box className="ToolMain--Box">
+  //     <Box className="ToolHead--Box">
+  //       <Text className="ToolMain--Heading">FFSTRIP</Text>
+  //     </Box>
+  //     <Box className="Tools-Inputs">
+  //       <Box className="SourceCoord">
+  //         <Text>Source Co ordinates :</Text>
+  //         <Input
+  //           placeholder="X Y Z"
+  //           onChange={(e: any) =>
+  //             onEnteringValue(e.target.value, "sourceCoord")
+  //           }
+  //           value={ffstripForm?.sourceCoord?.join(" ")}
+  //         />
+  //       </Box>
+  //       <Box className="SourceCoord">
+  //         <Text className="SourceCoord">Focal length :</Text>
+  //         <Input
+  //           placeholder="X"
+  //           onChange={(e: any) =>
+  //             onEnteringValue(e.target.value, "focalLengthX")
+  //           }
+  //           value={ffstripForm?.focalLengthX}
+  //         />
+  //         <Input
+  //           placeholder="Y"
+  //           onChange={(e: any) =>
+  //             onEnteringValue(e.target.value, "focalLengthY")
+  //           }
+  //           value={ffstripForm?.focalLengthY}
+  //         />
+  //         <Input
+  //           placeholder="Z"
+  //           onChange={(e: any) =>
+  //             onEnteringValue(e.target.value, "focalLengthZ")
+  //           }
+  //           value={ffstripForm?.focalLengthZ}
+  //         />
+  //       </Box>
+  //       <Box className="HVSize">
+  //         <Text>HSize</Text>{" "}
+  //         <Input
+  //           placeholder="HVSize"
+  //           onChange={(e: any) => onEnteringValue(e.target.value, "HSize")}
+  //           value={ffstripForm?.HSize?.join(" ")}
+  //         />{" "}
+  //         <Text>VSize</Text>{" "}
+  //         <Input
+  //           placeholder="VSize"
+  //           onChange={(e: any) => onEnteringValue(e.target.value, "VSize")}
+  //           value={ffstripForm?.VSize?.join(" ")}
+  //         />
+  //       </Box>
+  //       <Box className="HVSize">
+  //         <Text>HSpread</Text>{" "}
+  //         <Input
+  //           placeholder=""
+  //           onChange={(e: any) => onEnteringValue(e.target.value, "HSpread")}
+  //           value={ffstripForm?.HSpread?.join(" ")}
+  //         />{" "}
+  //         <Text>HS ControlPoints</Text>{" "}
+  //         <Input
+  //           placeholder=""
+  //           onChange={(e: any) =>
+  //             onEnteringValue(e.target.value, "HS_ControlPoints")
+  //           }
+  //           value={ffstripForm?.HS_ControlPoints?.join(" ")}
+  //         />
+  //       </Box>
+  //       <Box className="HVSize">
+  //         <Text>VAiming</Text>{" "}
+  //         <Input
+  //           placeholder=""
+  //           onChange={(e: any) => onEnteringValue(e.target.value, "VAiming")}
+  //           value={ffstripForm?.VAiming?.join(" ")}
+  //         />{" "}
+  //         <Text>VA ControlPanel</Text>{" "}
+  //         <Input
+  //           placeholder=""
+  //           onChange={(e: any) =>
+  //             onEnteringValue(e.target.value, "VA_ControlPanel")
+  //           }
+  //           value={ffstripForm?.VA_ControlPanel?.join(" ")}
+  //         />
+  //       </Box>
+  //       <Box className="HVSize">
+  //         <Text>HSpreadReduction</Text>{" "}
+  //         <Input
+  //           placeholder=""
+  //           onChange={(e: any) =>
+  //             onEnteringValue(e.target.value, "HSpreadReduction")
+  //           }
+  //           value={ffstripForm?.HSpreadReduction?.join(" ")}
+  //         />
+  //         <Text>HSR control Points</Text>{" "}
+  //         <Input
+  //           placeholder=""
+  //           onChange={(e: any) =>
+  //             onEnteringValue(e.target.value, "HSR_control_Points")
+  //           }
+  //           value={ffstripForm?.HSR_control_Points?.join(" ")}
+  //         />
+  //       </Box>
+  //       <Box className="HVSize">
+  //         <Text>Delta HSize:</Text>{" "}
+  //         <Input
+  //           placeholder=""
+  //           onChange={(e: any) =>
+  //             onEnteringValue(e.target.value, "Delta_HSize")
+  //           }
+  //           value={ffstripForm?.Delta_HSize}
+  //         />
+  //         <Text>Delta VSize:</Text>{" "}
+  //         <Input
+  //           placeholder=""
+  //           onChange={(e: any) =>
+  //             onEnteringValue(e.target.value, "Delta_VSize")
+  //           }
+  //           value={ffstripForm?.Delta_VSize}
+  //         />
+  //       </Box>
+  //       <Box className="HVSize">
+  //         <Text>X_Rotation Angle:</Text>{" "}
+  //         <Input
+  //           placeholder=""
+  //           onChange={(e: any) =>
+  //             onEnteringValue(e.target.value, "X_Rotation_Angle")
+  //           }
+  //           value={ffstripForm?.X_Rotation_Angle}
+  //         />
+  //         <Text>V_Translate Angle</Text>{" "}
+  //         <Input
+  //           placeholder=""
+  //           onChange={(e: any) =>
+  //             onEnteringValue(e.target.value, "V_Translate_Angle")
+  //           }
+  //           value={ffstripForm?.V_Translate_Angle}
+  //         />
+  //         <Text>H_Translate Angle</Text>{" "}
+  //         <Input
+  //           placeholder=""
+  //           onChange={(e: any) =>
+  //             onEnteringValue(e.target.value, "H_Translate_Angle")
+  //           }
+  //           value={ffstripForm?.H_Translate_Angle}
+  //         />
+  //       </Box>
+  //       <Box className="HVSize">
+  //         <Text>Chip Size X </Text>
+  //         <Input
+  //           placeholder=""
+  //           onChange={(e: any) =>
+  //             onEnteringValue(e.target.value, "Chip_Size_X")
+  //           }
+  //           value={ffstripForm?.Chip_Size_X}
+  //         />{" "}
+  //         <Text>Chip Size Y</Text>{" "}
+  //         <Input
+  //           placeholder=""
+  //           onChange={(e: any) =>
+  //             onEnteringValue(e.target.value, "Chip_Size_Y")
+  //           }
+  //           value={ffstripForm?.Chip_Size_Y}
+  //         />
+  //       </Box>
+  //       <Box className="HVSize">
+  //         <Text>Cylinder Diameter</Text>{" "}
+  //         <Input
+  //           placeholder=""
+  //           onChange={(e: any) =>
+  //             onEnteringValue(e.target.value, "Cylinder_Diameter")
+  //           }
+  //           value={ffstripForm?.Cylinder_Diameter}
+  //         />{" "}
+  //         <Text>Cylinder length</Text>{" "}
+  //         <Input
+  //           placeholder=""
+  //           onChange={(e: any) =>
+  //             onEnteringValue(e.target.value, "Cylinder_Length")
+  //           }
+  //           value={ffstripForm?.Cylinder_Length}
+  //         />
+  //       </Box>
+  //     </Box>
+  //     <Box className="ButtonGroup">
+  //       <Box className="UploadButtonGroup">
+  //         <Input
+  //           type="file"
+  //           className="UploadFile"
+  //           ref={fileInputRef}
+  //           display="none"
+  //           onChange={handleFileChange}
+  //         />
+  //         <Button className="UploadButton" onClick={handleClick}>
+  //           {file ? "File Selected" : "Select File"}
+  //         </Button>
+  //         <Button
+  //           className="UploadButton"
+  //           onClick={handleUpload}
+  //           disabled={!file}
+  //         >
+  //           Upload
+  //         </Button>
+  //       </Box>
+  //       <Button onClick={onClickingSumit} className="SubmitButton">Submit</Button>
+  //     </Box>
+  //   </Box>
+  // );
   return (
-    <Box className="ToolMain--Box">
-      <Box className="ToolHead--Box">
-        <Text className="ToolMain--Heading">FFSTRIP</Text>
-      </Box>
-      <Box className="Tools-Inputs">
-        <Box className="SourceCoord">
-          <Text>Source Co ordinates :</Text>
-          <Input
-            placeholder="X Y Z"
-            onChange={(e: any) =>
-              onEnteringValue(e.target.value, "sourceCoord")
-            }
-            value={ffstripForm?.sourceCoord?.join(" ")}
-          />
-        </Box>
-        <Box className="SourceCoord">
-          <Text className="SourceCoord">Focal length :</Text>
-          <Input
-            placeholder="X"
-            onChange={(e: any) =>
-              onEnteringValue(e.target.value, "focalLengthX")
-            }
-            value={ffstripForm?.focalLengthX}
-          />
-          <Input
-            placeholder="Y"
-            onChange={(e: any) =>
-              onEnteringValue(e.target.value, "focalLengthY")
-            }
-            value={ffstripForm?.focalLengthY}
-          />
-          <Input
-            placeholder="Z"
-            onChange={(e: any) =>
-              onEnteringValue(e.target.value, "focalLengthZ")
-            }
-            value={ffstripForm?.focalLengthZ}
-          />
-        </Box>
-        <Box className="HVSize">
-          <Text>HSize</Text>{" "}
-          <Input
-            placeholder="HVSize"
-            onChange={(e: any) => onEnteringValue(e.target.value, "HSize")}
-            value={ffstripForm?.HSize?.join(" ")}
-          />{" "}
-          <Text>VSize</Text>{" "}
-          <Input
-            placeholder="VSize"
-            onChange={(e: any) => onEnteringValue(e.target.value, "VSize")}
-            value={ffstripForm?.VSize?.join(" ")}
-          />
-        </Box>
-        <Box className="HVSize">
-          <Text>HSpread</Text>{" "}
-          <Input
-            placeholder=""
-            onChange={(e: any) => onEnteringValue(e.target.value, "HSpread")}
-            value={ffstripForm?.HSpread?.join(" ")}
-          />{" "}
-          <Text>HS ControlPoints</Text>{" "}
-          <Input
-            placeholder=""
-            onChange={(e: any) =>
-              onEnteringValue(e.target.value, "HS_ControlPoints")
-            }
-            value={ffstripForm?.HS_ControlPoints?.join(" ")}
-          />
-        </Box>
-        <Box className="HVSize">
-          <Text>VAiming</Text>{" "}
-          <Input
-            placeholder=""
-            onChange={(e: any) => onEnteringValue(e.target.value, "VAiming")}
-            value={ffstripForm?.VAiming?.join(" ")}
-          />{" "}
-          <Text>VA ControlPanel</Text>{" "}
-          <Input
-            placeholder=""
-            onChange={(e: any) =>
-              onEnteringValue(e.target.value, "VA_ControlPanel")
-            }
-            value={ffstripForm?.VA_ControlPanel?.join(" ")}
-          />
-        </Box>
-        <Box className="HVSize">
-          <Text>HSpreadReduction</Text>{" "}
-          <Input
-            placeholder=""
-            onChange={(e: any) =>
-              onEnteringValue(e.target.value, "HSpreadReduction")
-            }
-            value={ffstripForm?.HSpreadReduction?.join(" ")}
-          />
-          <Text>HSR control Points</Text>{" "}
-          <Input
-            placeholder=""
-            onChange={(e: any) =>
-              onEnteringValue(e.target.value, "HSR_control_Points")
-            }
-            value={ffstripForm?.HSR_control_Points?.join(" ")}
-          />
-        </Box>
-        <Box className="HVSize">
-          <Text>Delta HSize:</Text>{" "}
-          <Input
-            placeholder=""
-            onChange={(e: any) =>
-              onEnteringValue(e.target.value, "Delta_HSize")
-            }
-            value={ffstripForm?.Delta_HSize}
-          />
-          <Text>Delta VSize:</Text>{" "}
-          <Input
-            placeholder=""
-            onChange={(e: any) =>
-              onEnteringValue(e.target.value, "Delta_VSize")
-            }
-            value={ffstripForm?.Delta_VSize}
-          />
-        </Box>
-        <Box className="HVSize">
-          <Text>X_Rotation Angle:</Text>{" "}
-          <Input
-            placeholder=""
-            onChange={(e: any) =>
-              onEnteringValue(e.target.value, "X_Rotation_Angle")
-            }
-            value={ffstripForm?.X_Rotation_Angle}
-          />
-          <Text>V_Translate Angle</Text>{" "}
-          <Input
-            placeholder=""
-            onChange={(e: any) =>
-              onEnteringValue(e.target.value, "V_Translate_Angle")
-            }
-            value={ffstripForm?.V_Translate_Angle}
-          />
-          <Text>H_Translate Angle</Text>{" "}
-          <Input
-            placeholder=""
-            onChange={(e: any) =>
-              onEnteringValue(e.target.value, "H_Translate_Angle")
-            }
-            value={ffstripForm?.H_Translate_Angle}
-          />
-        </Box>
-        <Box className="HVSize">
-          <Text>Chip Size X </Text>
-          <Input
-            placeholder=""
-            onChange={(e: any) =>
-              onEnteringValue(e.target.value, "Chip_Size_X")
-            }
-            value={ffstripForm?.Chip_Size_X}
-          />{" "}
-          <Text>Chip Size Y</Text>{" "}
-          <Input
-            placeholder=""
-            onChange={(e: any) =>
-              onEnteringValue(e.target.value, "Chip_Size_Y")
-            }
-            value={ffstripForm?.Chip_Size_Y}
-          />
-        </Box>
-        <Box className="HVSize">
-          <Text>Cylinder Diameter</Text>{" "}
-          <Input
-            placeholder=""
-            onChange={(e: any) =>
-              onEnteringValue(e.target.value, "Cylinder_Diameter")
-            }
-            value={ffstripForm?.Cylinder_Diameter}
-          />{" "}
-          <Text>Cylinder length</Text>{" "}
-          <Input
-            placeholder=""
-            onChange={(e: any) =>
-              onEnteringValue(e.target.value, "Cylinder_Length")
-            }
-            value={ffstripForm?.Cylinder_Length}
-          />
-        </Box>
-      </Box>
-      <Box className="ButtonGroup">
-        <Box className="UploadButtonGroup">
-          <Input
-            type="file"
-            className="UploadFile"
-            ref={fileInputRef}
-            display="none"
-            onChange={handleFileChange}
-          />
-          <Button className="UploadButton" onClick={handleClick}>
-            {file ? "File Selected" : "Select File"}
-          </Button>
-          <Button
-            className="UploadButton"
-            onClick={handleUpload}
-            disabled={!file}
-          >
-            Upload
-          </Button>
-        </Box>
-        <Button onClick={onClickingSumit} className="SubmitButton">Submit</Button>
-      </Box>
+    <Box
+      bgGradient="linear(to-r, #1A1A40, #270082)"
+      p={8}
+      minHeight="100vh"
+      color="white"
+    >
+      <Flex direction="column" align="center" justify="center">
+        <Heading as="h1" size="xl" mb={6}>
+          FFSTRIP
+        </Heading>
+        <Stack spacing={4} width="100%" maxW="md">
+          <Stack spacing={4}>
+            <Box>Source Coordinates:</Box>
+            <Flex justify="space-between">
+              <Input
+                placeholder="X"
+                mb={2}
+                bg="whiteAlpha.300"
+                borderColor="#7A0BC0"
+                color="white"
+                mr={2}
+              />
+              <Input
+                placeholder="Y"
+                mb={2}
+                bg="whiteAlpha.300"
+                borderColor="#7A0BC0"
+                color="white"
+                mr={2}
+              />
+              <Input
+                placeholder="Z"
+                mb={2}
+                bg="whiteAlpha.300"
+                borderColor="#7A0BC0"
+                color="white"
+              />
+            </Flex>
+          </Stack>
+          <Stack spacing={4}>
+            <Box>Focal Length:</Box>
+            <Flex justify="space-between">
+              <Input
+                placeholder="0"
+                mb={2}
+                bg="whiteAlpha.300"
+                borderColor="#7A0BC0"
+                color="white"
+                mr={2}
+              />
+              <Input
+                placeholder="0"
+                mb={2}
+                bg="whiteAlpha.300"
+                borderColor="#7A0BC0"
+                color="white"
+                mr={2}
+              />
+              <Input
+                placeholder="0"
+                mb={2}
+                bg="whiteAlpha.300"
+                borderColor="#7A0BC0"
+                color="white"
+              />
+            </Flex>
+          </Stack>
+          <Flex justify="space-between">
+            <Input
+              placeholder="HSize"
+              bg="whiteAlpha.300"
+              borderColor="#7A0BC0"
+              color="white"
+              mr={2}
+            />
+            <Input
+              placeholder="VSize"
+              bg="whiteAlpha.300"
+              borderColor="#7A0BC0"
+              color="white"
+            />
+          </Flex>
+          <Flex justify="space-between">
+            <Input
+              placeholder="HSpread"
+              bg="whiteAlpha.300"
+              borderColor="#7A0BC0"
+              color="white"
+              mr={2}
+            />
+            <Input
+              placeholder="HS ControlPoints"
+              bg="whiteAlpha.300"
+              borderColor="#7A0BC0"
+              color="white"
+            />
+          </Flex>
+          <Flex justify="space-between">
+            <Input
+              placeholder="VAiming"
+              bg="whiteAlpha.300"
+              borderColor="#7A0BC0"
+              color="white"
+              mr={2}
+            />
+            <Input
+              placeholder="VA ControlPanel"
+              bg="whiteAlpha.300"
+              borderColor="#7A0BC0"
+              color="white"
+            />
+          </Flex>
+          <Flex justify="space-between">
+            <Input
+              placeholder="HSpreadReduction"
+              bg="whiteAlpha.300"
+              borderColor="#7A0BC0"
+              color="white"
+              mr={2}
+            />
+            <Input
+              placeholder="HSR control Points"
+              bg="whiteAlpha.300"
+              borderColor="#7A0BC0"
+              color="white"
+            />
+          </Flex>
+          <Flex justify="space-between">
+            <Input
+              placeholder="Delta HSize"
+              bg="whiteAlpha.300"
+              borderColor="#7A0BC0"
+              color="white"
+              mr={2}
+            />
+            <Input
+              placeholder="Delta VSize"
+              bg="whiteAlpha.300"
+              borderColor="#7A0BC0"
+              color="white"
+            />
+          </Flex>
+          <Flex justify="space-between">
+            <Input
+              placeholder="X_Rotation Angle"
+              bg="whiteAlpha.300"
+              borderColor="#7A0BC0"
+              color="white"
+              mr={2}
+            />
+            <Input
+              placeholder="V_Translate Angle"
+              bg="whiteAlpha.300"
+              borderColor="#7A0BC0"
+              color="white"
+              mr={2}
+            />
+            <Input
+              placeholder="H_Translate Angle"
+              bg="whiteAlpha.300"
+              borderColor="#7A0BC0"
+              color="white"
+            />
+          </Flex>
+          <Flex justify="space-between">
+            <Input
+              placeholder="Chip Size X"
+              bg="whiteAlpha.300"
+              borderColor="#7A0BC0"
+              color="white"
+              mr={2}
+            />
+            <Input
+              placeholder="Chip Size Y"
+              bg="whiteAlpha.300"
+              borderColor="#7A0BC0"
+              color="white"
+            />
+          </Flex>
+          <Flex justify="space-between">
+            <Input
+              placeholder="Cylinder Diameter"
+              bg="whiteAlpha.300"
+              borderColor="#7A0BC0"
+              color="white"
+              mr={2}
+            />
+            <Input
+              placeholder="Cylinder Length"
+              bg="whiteAlpha.300"
+              borderColor="#7A0BC0"
+              color="white"
+            />
+          </Flex>
+          <Flex justify="space-between" mt={4}>
+            <Button bgGradient="linear(to-r, #7A0BC0, #FA58B6)" color="white">
+              Select File
+            </Button>
+            <Button bgGradient="linear(to-r, #7A0BC0, #FA58B6)" color="white">
+              Upload
+            </Button>
+            <Button bgGradient="linear(to-r, #7A0BC0, #FA58B6)" color="white">
+              Submit
+            </Button>
+          </Flex>
+        </Stack>
+      </Flex>
     </Box>
   );
 };

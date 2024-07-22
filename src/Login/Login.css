@@ -2,90 +2,133 @@
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: column;
-  /* background-image: url("../assets/Images/loginBackground.jpeg"); */
-  background-image: url("../assets/Images/carHeadlight.webp");
-  background-size: cover;
-  /* opacity: 0.8; */
-  justify-content: center;
-  align-items: center;
+  background: #270082;
 }
 
-.Login--Form--Box {
-  position: relative;
-  padding: 50px;
-  border-radius: 20px;
-  backdrop-filter: blur(12px);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  justify-content: center;
-  align-items: center;
+.loginImg{
+  width: 100%;
 }
 
-.Login--Options {
-  display: flex;
-  flex-direction: row;
-  gap: 100px;
-}
-
-.Other--Login--Options--Box {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 200px;
-  justify-content: center;
-  align-items: center;
-}
-
-.Login--Continue--Text {
-  color: white;
-  font-size: 25px;
-}
-
-.Login--SSO--Box {
-  display: flex;
-  flex-direction: row;
-  gap: 40px;
-}
-
-.Login--Text {
-  font-size: 30px;
+.Login--Heading {
+  font-size: 56px;
+  font-style: bold;
+  font-weight: 500;
+  font-family: sans-serif;
   color: #fff;
-  align-items: center;
-  display: flex;
-  justify-content: center;
+  position: absolute;
+  top: 1%;
+  right: 20%;
 }
 
-.Form--Login {
+.Login--Form {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  gap: 20px;
+  width: 500px !important;
+  position: absolute;
+  right: 10%;
+  top: 15%;
+}
+
+.Login--Inputs--Box {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.Login--Form--Email__Box,
+.Login--Form--Password__Box {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.Login--Input {
-  width: 300px !important;
-  background-color: #fff !important;
-  border-bottom: 1px solid #3a3a3a !important;
-  border-radius: 0px !important;
+.Email--Text,
+.Password--Text {
+  font-size: 24px;
+  font-family: sans-serif;
+  font-weight: 500;
+  color: #fff;
 }
 
-.Login--Input::placeholder {
-  color: #3a3a3a !important;
+.Email--Input,
+.Password--Input {
+  max-width: 500px !important;
+  display: flex;
+  height: 53px !important;
+  border-radius: 50px !important;
+  border: #7a0bc0 solid 2px !important;
+}
+
+.Login--Credentials--Password{
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Login--Remember--CheckBox{
+  width: 23px;
+  height: 23px;
+  border-color: #7a0bc0;
+  border-radius: 5px;
+  color: #fff;
+ font-size: 12px !important;
+ width: 200px;
+}
+
+.Login--ForgotPassword--Text{
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.Login--Button--Box{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
 }
 
 .Login--Button{
-    width: 300px;
-    height: 41px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff !important;
-    font-size: 15px !important;
-    font-style: bold !important;
-    background-color: #258EEE !important;
-    border-radius: 10px;
-    box-shadow: #3a3a3a;
-    cursor: pointer;
+  background: linear-gradient(90deg, #7A0BC0 18%, #FA58B6 90%) !important;
+  width: 201px !important;
+  height: 52px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  color: #fff !important;
+  font-size: 20px !important;
+}
+
+.Login--Button:hover{
+  box-shadow:linear-gradient(90deg, #7A0BC0 18%, #FA58B6 90%) !important;
+}
+
+.Login--SignIn--Methods{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+}
+
+.Login--OR--Text{
+  color: #fff;
+  font-size: 22px;
+  font-style: bold;
+}
+
+.Login--SignIn--Text{
+  color: #fff;
+  font-size: 18px;
+  font-style: bold;
+}
+
+.Login--Methods{
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
 }
